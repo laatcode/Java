@@ -1,4 +1,4 @@
-package com.laat.javaswingcomponents;
+package javaswingcomponents;
 
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JFrame;

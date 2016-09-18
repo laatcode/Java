@@ -1,4 +1,4 @@
-package com.laat.layoutmanager;
+package layoutmanager;
 
 import java.awt.BorderLayout;
 import javax.swing.JButton;

@@ -1,4 +1,4 @@
-package com.laat.javaswingcomponents;
+package javaswingcomponents;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;

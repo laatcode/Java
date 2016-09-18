@@ -1,4 +1,4 @@
-package com.laat.javaswingcomponents;
+package javaswingcomponents;
 
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
