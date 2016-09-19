@@ -12,11 +12,11 @@ import javax.swing.JInternalFrame;
 import javax.swing.JPanel;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
+import javax.swing.JWindow;
 
 /**
  * @author Luis Angel Avila Torres
  * @version 1.0
- * 
  * Los componentes atómicos son elementos que no pueden
  * almacenar otros objetos o componentes gráficos.
  * No se integra el componente JScrollPane debido a que
@@ -32,13 +32,13 @@ public class JavaSwingContainerComponents extends JFrame{
 	JDesktopPane panelEscritorio;
 	JInternalFrame ventanaInterna;
 	JDialog dialogo;
-	JButton boton1, boton2, boton3, boton4, boton5, boton6;
+	JButton boton1, boton2, boton3, boton4, boton5, boton6, boton7;
 
 	
 	public JavaSwingContainerComponents(){
 		
 		//Creación de los componentes
-		boton1 = new JButton("Ejecutar Ventana Dialogo");
+		boton1 = new JButton("Ejecutar JDialog");
 		//Acción para poder ejecutar el componente JDialog
 		boton1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -60,11 +60,27 @@ public class JavaSwingContainerComponents extends JFrame{
 		boton5 = new JButton("Boton2 de prueba");
 		boton6 = new JButton("Boton2 de prueba");
 		
+		boton7 = new JButton("Ejecutar JWindow");
+		//Acción para poder ejecutar el componente JWindows, el cual es una ventana sin barra de título ni botones de gestión de ventana
+		boton7.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				class Ventana extends JWindow{								//Creación de la clase Ventana que extiende de JWindow
+					public Ventana(){								//Constructor de Ventana
+						setSize(300,200);							//Tamaño de la ventana
+						setVisible(true);							//Visibilidad de la ventana
+					}
+				}
+				new Ventana();
+			}
+		});
+		
+		
 		ventana = new JFrame();											//Creación de ventana
 		panel = new JPanel();											//Creación de panel
 		panel.setBorder(BorderFactory.createLineBorder(Color.black));						//Borde para poder visualizar el panel, por defecto no trae borde
 		panel.setBounds(10, 10, 280, 40);
 		panel.add(boton1);											//Agregar botón al panel
+		panel.add(boton7);
 		
 		
 		
