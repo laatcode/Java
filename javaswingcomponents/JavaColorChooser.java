@@ -13,7 +13,7 @@ import javax.swing.JPanel;
  * @author Luis Angel Avila Torres
  * @version 1.0
  * 
- * JFileChooser permite escoger un color a través de diferentes paletas prediseñadas
+ * JColorChooser permite escoger un color a través de diferentes paletas prediseñadas
  * 
  */
 
