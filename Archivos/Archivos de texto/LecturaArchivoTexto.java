@@ -6,34 +6,39 @@ import java.io.FileReader;
 /**
  * @author Luis Angel Avila Torres
  * @version 1.0
- * 
- * La clase File es una representaci髇 abstracta de archivo y rutas de directorio
+ *
+ * Los Stream son una secuencia ordenada de datos con un determinado origen y destino, normalmente se utilzan en parejas (iniciador, filtro)
+ *
+ *FileReader (iniciador): lee texto de un fichero
+ * BufferedReader (filtro): lee texto (l铆nea a l铆nea) de un Reader
+ *
+ * La clase File es una representaci贸n abstracta de archivo y rutas de directorio
  * 
  * La clase FileReader permite leer archvivos de caracteres.
- * Los constructores de esta clase suponen que la codificaci髇 de caracteres predeterminada
- * y el tama駉 predeterminado del b鷉er de bytes son apropiados.
+ * Los constructores de esta clase suponen que la codificaci贸n de caracteres predeterminada
+ * y el tama帽o predeterminado del b煤fer de bytes son apropiados.
  * Para especificar estos valores, puede construir un InputStreamReader en un FileInputStream.
  * 
  * La clase BufferedReader permite leer el texto de una secuencia de entrada de caracteres,
- * almacenando en b鷉er caracterespara proporcionar una lectura eficiente de caracteres, matrices y l韓eas.
- * El tama駉 del b鷉er puede especificarse, o puede usarse el tama駉 predeterminado.
- * El valor predeterminado es lo suficientemente grande para la mayor韆 de los prop髎itos.
+ * almacenando en b煤fer caracterespara proporcionar una lectura eficiente de caracteres, matrices y l铆neas.
+ * El tama帽o del b煤fer puede especificarse, o puede usarse el tama帽o predeterminado.
+ * El valor predeterminado es lo suficientemente grande para la mayor铆a de los prop贸sitos.
  * 
  */
 public class LecturaArchivoTexto{
 	
 	public static void main(String[] args) {
-		//Declaraci髇 de variables
+		//Declaraci贸n de variables
 		File archivo;
 		FileReader fr=null;
 		BufferedReader br;
 		
 		try{
-			//Almacena la ruta del archivo en la variable archivo
+			//Almacena la ruta del archivo en la variable archivo (Stream iniciador)
 			archivo = new File("D:\\archivo.txt");
 			//Crea un objeto FileReader con la ruta del archivo a leer
 			fr = new FileReader (archivo);
-			//Crea un flujo de entrada de caracteres de espacio de memoria(buffer)
+			//Crea un flujo de entrada de caracteres de espacio de memoria(buffer, Stream filtro)
 	        br = new BufferedReader(fr);
 	        
 		    // Lectura del archivo
@@ -42,11 +47,11 @@ public class LecturaArchivoTexto{
 	        while((linea=br.readLine())!=null){
 	        	System.out.println(linea);
 	        }
-        //Se crea excepci髇 si el sistema no encuentra el archivo
+        //Se crea excepci贸n si el sistema no encuentra el archivo
 		}catch (FileNotFoundException e) {
 			System.out.println("El sistema no puede encontrar el archivo");
 		}
-		//Se crea Excepci髇 si el sistema encuentra cualquier otro error
+		//Se crea Excepci贸n si el sistema encuentra cualquier otro error
 		catch (Exception e) {
 			System.out.println("Error: "+e);
 		}finally {
@@ -54,7 +59,7 @@ public class LecturaArchivoTexto{
 				try{
 					fr.close();
 				}
-				//Se captura excepci髇 si existen problemas al cerrar el archivo
+				//Se captura excepci贸n si existen problemas al cerrar el archivo
 		        catch (Exception e){
 		        	System.out.println("Error al cerrar el archivo "+e);
 		        }
